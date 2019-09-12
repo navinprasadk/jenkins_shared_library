@@ -1,7 +1,8 @@
 def call(){
-            withSonarQubeEnv('Sonar') {
-              sh 'cd client;${scannerHome}/bin/sonar-scanner -Dproject.settings=./Sonar.properties;'
-                  }
+            
+         withSonarQubeEnv(credentialsId: 'sonar_anu', installationName: 'Sonar') {
+    // some block
+}
 }
 
     
