@@ -2,8 +2,12 @@ def call(){
             
          withSonarQubeEnv(credentialsId: 'sonar_anu', installationName: 'Sonar') {
     // some block
-                     waitForQualityGate abortPipeline: false, credentialsId: 'sonar_anu'
+                     
 }
+      def qualitygate = waitForQualityGate()
+      if (qualitygate.status != "OK") {
+         error "Pipeline aborted due to quality gate coverage failure: ${qualitygate.status}"
+      }
 }
 
     
