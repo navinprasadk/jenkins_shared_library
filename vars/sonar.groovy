@@ -1,13 +1,12 @@
 def call(){
             
-         withSonarQubeEnv(credentialsId: 'sonar_anu', installationName: 'Sonar') {
-    // some block
-                     
-}
-      def qualitygate = waitForQualityGate()
-      if (qualitygate.status != "OK") {
-         error "Pipeline aborted due to quality gate coverage failure: ${qualitygate.status}"
-      }
+ environment {
+           scannerHome=tool 'sonar scanner'
+       }
+            steps {
+                
+                sh "mvn sonar:sonar -Dsonar.host.url=http://18.224.155.110:9000"
+            }
 }
 
     
