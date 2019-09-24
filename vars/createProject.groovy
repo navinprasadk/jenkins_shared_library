@@ -22,10 +22,10 @@ def projLength = resultJson.name.size()
    key=appendStr.toUpperCase();
  }
   def projKey = '"'+key+'"'
-httpRequest authentication: 'bitbucket_anu', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: """{
+  println  """{
     "key": ${projKey},
     "name": ${projectName},
-}""", responseHandle: 'NONE', url: 'http://18.224.68.30:7990/rest/api/1.0/projects'
+}"""
 }
 
  def call(){
