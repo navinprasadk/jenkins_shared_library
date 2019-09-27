@@ -40,5 +40,5 @@ httpRequest authentication: 'bitbucket_anu', contentType: 'APPLICATION_JSON', cu
 "name": "tomcat_web_app",
 "scmId": "git",
 "forkable": true
-}''', responseHandle: 'NONE', url: 'http://18.224.68.30:7990/rest/api/1.0/projects/SRE/repos'
+}''', responseHandle: 'NONE', url: 'http://18.224.68.30:7990/rest/api/1.0/projects/ANK/repos'
 }
