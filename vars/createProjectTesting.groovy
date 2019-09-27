@@ -32,6 +32,6 @@ def projLength = resultJson.name.size()
  def request = libraryResource 'data.json'
  createProject(request)
 }
-def call {
+
   createRepoTesting()
-}
+
