@@ -4,5 +4,5 @@ httpRequest authentication: 'bitbucket_anu', contentType: 'APPLICATION_JSON', cu
 "name": "web-application",
 "scmId": "git",
 "forkable": true
-}''', responseHandle: 'NONE', url: 'http://18.224.68.30:7990/rest/api/1.0/projects/SHA/repos'
+}''', responseHandle: 'NONE', url: 'http://18.224.68.30:7990/rest/api/1.0/projects/DEM/repos'
 }
