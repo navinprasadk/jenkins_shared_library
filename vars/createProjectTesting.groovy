@@ -5,6 +5,7 @@ createProject(String data){
 def jsonSlurper = new JsonSlurper() 
 def resultJson = jsonSlurper.parseText(data)
 def projectName = '"'+resultJson.name+'"'
+def projUrl= '"'+resultJson.url+'"'
 def length = 3
 def projLength = resultJson.name.size()
  if(projLength>=3){
@@ -25,7 +26,7 @@ def projLength = resultJson.name.size()
   httpRequest authentication: 'bitbucket_anu', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: """{
     "key": ${projKey},
     "name": ${projectName}
-}""", responseHandle: 'NONE', url: 'http://18.224.68.30:7990/rest/api/1.0/projects'
+}""", responseHandle: 'NONE', url: projUrl
 }
 
  def call(){
