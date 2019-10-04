@@ -9,7 +9,7 @@ def projUrl = '"'+resultJson.url+'"'
   
   httpRequest authentication: 'bitbucket_anu', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: '''
 {
-"name": resultJson.repoName,
+"name": ${repoName},
 "scmId": "git",
 "forkable": true
 }''', responseHandle: 'NONE', url: resultJson.url+'DEM/repos' 
