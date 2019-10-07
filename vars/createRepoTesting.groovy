@@ -8,10 +8,10 @@ String repoName = resultJson.repoName
 def projUrl = resultJson.url
   
   println '"'+repoName.toString()+'"'
-  
+  String repoName='"'+repoName.toString()+'"'
   httpRequest authentication: 'bitbucket_anu', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: '''
 {
-    "name": '"'+repoName.toString()+'"',
+    "name": repoName,
     "scmId": "git",
     "forkable": true
 }''', responseHandle: 'NONE', url: projUrl +'DEM/repos' 
