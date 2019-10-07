@@ -4,10 +4,10 @@ import groovy.json.JsonSlurper
 createRepo(String data){
 def jsonSlurper = new JsonSlurper() 
 def resultJson = jsonSlurper.parseText(data)
-def repoName = resultJson.repoName
+String repoName = resultJson.repoName
 def projUrl = resultJson.url
   
-  println "jsadnaj----"+repoName.toString()
+  println '"'+repoName.toString()+'"'
   
   httpRequest authentication: 'bitbucket_anu', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: '''
 {
