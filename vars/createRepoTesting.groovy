@@ -9,7 +9,6 @@ def projUrl = resultJson.url
   
   println '"'+repoName2.toString()+'"'
   String repoName='"'+repoName2.toString()+'"'
-  println "reponame---- "+reponame
   httpRequest authentication: 'bitbucket_anu', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: '''
 {
     "name": '"'+repoName+'"',
