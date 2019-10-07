@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper 
 
 @NonCPS
-createRepo(){
+createRepo(String data){
 def jsonSlurper = new JsonSlurper() 
 def resultJson = jsonSlurper.parseText(data)
 //def repoName = '"'+resultJson.repoName+'"'
@@ -9,9 +9,9 @@ def projUrl = '"'+resultJson.url+'"'
   
   httpRequest authentication: 'bitbucket_anu', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: '''
 {
-"name": web_1,
-"scmId": "git",
-"forkable": true
+    "name": web_1,
+    "scmId": "git",
+    "forkable": true
 }''', responseHandle: 'NONE', url: resultJson.url+'DEM/repos' 
 }
 
@@ -20,6 +20,8 @@ def call(){
  def request = libraryResource 'data.json'
  createRepo(request)
 }
+
+
 
 
 
