@@ -12,7 +12,7 @@ def projUrl = '"'+resultJson.url+'"'
     "name": web_1,
     "scmId": "git",
     "forkable": true
-}''', responseHandle: 'NONE', url: ${projUrl}+'DEM/repos' 
+}''', responseHandle: 'NONE', url: projUrl +'DEM/repos' 
 }
 
 
