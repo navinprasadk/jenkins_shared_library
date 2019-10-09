@@ -1,7 +1,7 @@
 {
  
       "name":"demoSharedLibrary",
-      "url":param.bit_bucket_url,
+      "url":bit_bucket_url,
       "repoName":"web_1"
   
 }
