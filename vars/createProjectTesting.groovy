@@ -8,10 +8,10 @@ def build = thr?.executable
  
  
 // get parameters
-def parameters = build?.actions.find{ it instanceof ParametersAction }?.parameters
+def parameters = build?.actions.find{BB_URL}?.parameters
 parameters.each {
-   println "parameter ${it.name}:"
-   println it.dump()
+   println "parameter ${BB_URL.name}:"
+   println BB_URL.dump()
    println "-" * 80
 }
 
