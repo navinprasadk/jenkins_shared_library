@@ -5,3 +5,34 @@
       "repoName":"web_1"
   
 }
+
+/*"scm": {
+    "tool": {
+      "name": "github"
+    },
+    "repositories": {
+      "repository": [
+        {
+          "create": true,
+          "repo_name": "new_check",
+          "branches": {
+            "startPoint": "refs/heads",
+            "branch": [
+              {
+                "create": true,
+                "name": "dev"
+              },
+              {
+                "create": true,
+                "name": "qa"
+              },
+              {
+                "create": true,
+                "name": "prod"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },*/
