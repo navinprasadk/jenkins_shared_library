@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper 
 
 @NonCPS
-createDevBranch(String data){
+createDevBranch(String data, String URL){
 def jsonSlurper = new JsonSlurper() 
 def resultJson = jsonSlurper.parseText(data)
 //def repoName = '"'+resultJson.repoName+'"'
@@ -11,13 +11,13 @@ def projUrl = '"'+resultJson.url+'"'
 {
     "name": "DEV",
     "startPoint": "refs/heads/master"
-}''', responseHandle: 'NONE', url: resultJson.url+'DEM/repos/web_1/branches' 
+}''', responseHandle: 'NONE', url: "http://" + "${URL}" + "/rest/api/1.0/projects/DEM/repos/web_1/branches"
 }
 
 
-def call(){
+def call(String BITBUCKETURL){
  def request = libraryResource 'data.json'
- createDevBranch(request)
+ createDevBranch(request,BITBUCKETURL)
 }
 
 
