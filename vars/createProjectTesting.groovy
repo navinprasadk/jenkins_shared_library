@@ -49,6 +49,7 @@ def projLength = resultJson.name.size()
  def request = libraryResource 'data.json'
  createProject(request)
  println $name
+  echo "hiiiiiiiiiiiiiiii, ${name}"
 }
 
 
