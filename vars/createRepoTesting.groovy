@@ -11,7 +11,8 @@ def projUrl = resultJson.url
   
   httpRequest authentication: 'bitbucket_anu', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: '''
 {
-    "name": "${repoName}",
+    //"name": "${repoName}",
+     "name": "web_1",
     "scmId": "git",
     "forkable": true
 }''', responseHandle: 'NONE', url: "http://" + "${URL}" + "/rest/api/1.0/projects/DEM/repos" 
