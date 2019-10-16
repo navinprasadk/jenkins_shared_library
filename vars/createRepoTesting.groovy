@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper 
 
 @NonCPS
-createRepo(String data){
+createRepo(String data, String URL){
 def jsonSlurper = new JsonSlurper() 
 def resultJson = jsonSlurper.parseText(data)
 def repoName = '"'+resultJson.repoName+'"'
@@ -14,13 +14,13 @@ def projUrl = resultJson.url
     "name": "web_1",
     "scmId": "git",
     "forkable": true
-}''', responseHandle: 'NONE', url: projUrl +'DEM/repos' 
+}''', responseHandle: 'NONE', url: "http://" + "${URL}" + "/rest/api/1.0/projects/DEM/repos" 
 }
 
 
-def call(){
+def call(String BITBUCKETURL){
  def request = libraryResource 'data.json'
- createRepo(request)
+ createRepo(request,BITBUCKETURL)
 }
 
 
