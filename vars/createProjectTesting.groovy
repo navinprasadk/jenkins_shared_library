@@ -17,7 +17,7 @@ parameters.each {
 
 
 @NonCPS
-createProject(String data){
+createProject(String data, String URL){
 def jsonSlurper = new JsonSlurper() 
 def resultJson = jsonSlurper.parseText(data)
 def projectName = '"'+resultJson.name+'"'
@@ -42,12 +42,13 @@ def projLength = resultJson.name.size()
   httpRequest authentication: 'bitbucket_anu', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: """{
     "key": ${projKey},
     "name": ${projectName}
-}""", responseHandle: 'NONE', url: "${BITBUCKETURL}"
+}""", responseHandle: 'NONE', url: "${URL}"
 }
 
  def call(String BITBUCKETURL){
- //def request = libraryResource 'data.json'
- //createProject(request)
+ def request = libraryResource 'data.json'
+ createProject(request,BITBUCKETURL)
+ 
  //println $BITBUCKETURL
   echo "hiiiiiiiiiiiiiiii, ${BITBUCKETURL}"
 }
