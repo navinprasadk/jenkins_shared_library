@@ -48,7 +48,7 @@ def projLength = resultJson.name.size()
  def call(String BITBUCKETURL){
  //def request = libraryResource 'data.json'
  //createProject(request)
- println $BITBUCKETURL
+ //println $BITBUCKETURL
   echo "hiiiiiiiiiiiiiiii, ${BITBUCKETURL}"
 }
 
