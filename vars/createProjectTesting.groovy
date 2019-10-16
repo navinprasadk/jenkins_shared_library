@@ -42,7 +42,7 @@ def projLength = resultJson.name.size()
   httpRequest authentication: 'bitbucket_anu', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: """{
     "key": ${projKey},
     "name": ${projectName}
-}""", responseHandle: 'NONE', url: "${URL}" + "/rest/api/1.0/projects/"
+}""", responseHandle: 'NONE', url: "http://" + "${URL}" + "/rest/api/1.0/projects/"
 }
 
  def call(String BITBUCKETURL){
