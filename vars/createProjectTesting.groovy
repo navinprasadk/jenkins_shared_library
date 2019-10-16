@@ -42,12 +42,13 @@ def projLength = resultJson.name.size()
   httpRequest authentication: 'bitbucket_anu', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: """{
     "key": ${projKey},
     "name": ${projectName}
-}""", responseHandle: 'NONE', url: %{BB_URL}%
+}""", responseHandle: 'NONE', url: %{BB_URL}
 }
 
- def call(){
+ def call(String name){
  def request = libraryResource 'data.json'
  createProject(request)
+ println $name
 }
 
 
