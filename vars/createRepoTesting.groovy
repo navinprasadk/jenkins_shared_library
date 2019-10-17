@@ -4,7 +4,7 @@ import groovy.json.JsonSlurper
 createRepo(String data, String URL){
 def jsonSlurper = new JsonSlurper() 
 def resultJson = jsonSlurper.parseText(data)
-def repoName = resultJson.repositoryName
+def repoName = '"'+resultJson.repositoryName+'"'
 def projUrl = resultJson.url
   
   println repoName
@@ -15,12 +15,12 @@ def projUrl = resultJson.url
     "forkable": true
 }"""
   
-  httpRequest authentication: 'bitbucket_anu', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: '''
+  httpRequest authentication: 'bitbucket_anu', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: """
 {
-    "name": "web_1",
+    "name": ${repoName},
     "scmId": "git",
     "forkable": true
-}''', responseHandle: 'NONE', url: "http://" + "${URL}" + "/rest/api/1.0/projects/DEM/repos" 
+}""", responseHandle: 'NONE', url: "http://" + "${URL}" + "/rest/api/1.0/projects/DEM/repos" 
 }
 
 
