@@ -11,7 +11,7 @@ def projUrl = '"'+resultJson.url+'"'
 {
     "name": ${branchName},
     "startPoint": "refs/heads/master"
-}""", responseHandle: 'NONE', url: "http://" + "${URL}" + "/rest/api/1.0/projects/DEM/repos/web_3/branches"
+}""", responseHandle: 'NONE', url: "http://" + "${URL}" + "/rest/api/1.0/projects/DEM/repos/app/branches"
 }
 
 
