@@ -8,12 +8,12 @@ def repoName = resultJson.repositoryName
 def projUrl = resultJson.url
   
   println repoName
-  println '''
+  println """
 {
-    "name": repoName,
+    "name": ${repoName},
     "scmId": "git",
     "forkable": true
-}'''
+}"""
   
   httpRequest authentication: 'bitbucket_anu', contentType: 'APPLICATION_JSON', customHeaders: [[maskValue: false, name: 'Content-Type', value: 'application/json']], httpMode: 'POST', requestBody: '''
 {
