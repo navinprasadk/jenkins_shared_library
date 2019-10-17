@@ -10,7 +10,7 @@ def projUrl = resultJson.url
   println repoName
   println '''
 {
-    "name": ${repoName},
+    "name": repoName,
     "scmId": "git",
     "forkable": true
 }'''
