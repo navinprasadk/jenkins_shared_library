@@ -9,11 +9,11 @@
    */             
               
               
- @NonCPS
+ /*@NonCPS
  codePush(String data){
     def jsonSlurper = new JsonSlurper() 
     def resultJson = jsonSlurper.parseText(data)
- }
+ }*/
               
               
  def call(){
@@ -24,5 +24,5 @@
 
    println proc.text
    println b.toString()
-  codePush(request)
+ //codePush(request)
  }
