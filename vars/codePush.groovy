@@ -13,7 +13,7 @@
  codePush(String data){
     def jsonSlurper = new JsonSlurper() 
     def resultJson = jsonSlurper.parseText(data)
- }*/
+ }
               
               
  def call(){
@@ -29,4 +29,14 @@
    println proc.text
    println b.toString()
  //codePush(request)
- }
+ }*/
+
+def call(){
+def sout = new StringBuffer(), serr = new StringBuffer()
+
+def proc ='cd/resources/codePush.sh'.execute()
+
+proc.consumeProcessOutput(sout, serr)
+proc.waitForOrKill(1000)
+println sout
+}
