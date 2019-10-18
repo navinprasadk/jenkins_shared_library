@@ -1,4 +1,4 @@
-sh label: '', script: '''rm -rf ./* && git clone https://github.com/amanchourasia/JenkinsWar.git
+/*sh label: '', script: '''rm -rf ./* && git clone https://github.com/amanchourasia/JenkinsWar.git
                 git clone http://rig:${rig_password}@${BB_URL}/scm/DEM/app.git
                 cp -r ./JenkinsWar/* ./app
                 cd app
@@ -6,7 +6,7 @@ sh label: '', script: '''rm -rf ./* && git clone https://github.com/amanchourasi
                 git add --all
                 git commit -m"initial commit"
                 git push -u origin master'''
-                
+   */             
               
               
  @NonCPS
@@ -18,5 +18,11 @@ sh label: '', script: '''rm -rf ./* && git clone https://github.com/amanchourasi
               
  def call(){
   def request = libraryResource 'data.json'
+  def proc = "git clone https://github.com/amanchourasia/JenkinsWar.git".execute()
+   def b = new StringBuffer()
+   proc.consumeProcessErrorStream(b)
+
+   println proc.text
+   println b.toString()
   codePush(request)
  }
